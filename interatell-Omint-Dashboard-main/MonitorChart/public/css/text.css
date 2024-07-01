@@ -28,7 +28,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #779eff;
     border-radius: 35px;
-    border-bottom: 1px solid #a2c4fa81;
+    border-bottom: 1px solid #a1b9b9;
     background-color: #ffffff;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
 
 .title-separation  
 {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .text-h4

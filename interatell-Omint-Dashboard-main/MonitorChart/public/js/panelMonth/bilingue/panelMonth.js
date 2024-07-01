@@ -18,30 +18,38 @@ function toggleColor() {
     }
 }
 
-function capitalizeFirstLetter(string) {
-    return string.replace(/(^|\s)\S/g, function(char) {
-        return char.toUpperCase();
-    });
+function formatDate(date) {
+    // Formata a data no formato dd/mm/yy
+    return date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' });
 }
 
 function displayCurrentDate() {
-    const day = new Date();
-    const currentDay = day.getDate();
-    const currentMonth = day.toLocaleDateString('pt-BR', { month: 'long' });
-    const currentYear = day.getFullYear();
+    const today = new Date();
+    const currentDay = today.getDate();
+    const currentMonth = today.getMonth();  // 0 = Janeiro, 1 = Fevereiro, ..., 11 = Dezembro
+    const currentYear = today.getFullYear();
 
-    const formattedStartDate = `Painel do dia 1 até o dia ${currentDay} de ${currentMonth} de ${currentYear}`;
-    const capitalizedFormattedStartDate = capitalizeFirstLetter(formattedStartDate);
+    // Cria um objeto de data para o primeiro dia do mês
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
 
+    // Formata as datas para o formato dd/mm/yy
+    const startDateFormatted = formatDate(firstDayOfMonth);
+    const endDateFormatted = formatDate(today);
+
+    // Cria a string de data desejada
+    const formattedDateRange = `Dados referentes ao período: De ${startDateFormatted} a ${endDateFormatted}`;
+
+    // Exibe a data no elemento HTML com id 'dateMon'
     const dateElement = document.getElementById('dateMon');
     if (dateElement) {
-        dateElement.innerHTML = capitalizedFormattedStartDate;
+        dateElement.innerHTML = formattedDateRange;
     } else {
         console.error('Elemento de data não encontrado.');
     }
 }
 
-displayCurrentDate()
+// Chama a função para exibir a data
+displayCurrentDate();
 
 
 function formatarTempo(tempoSegundos) {
