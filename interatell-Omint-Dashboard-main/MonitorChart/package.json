@@ -1,0 +1,24 @@
+{
+  "name": "monitorchart",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "mychart.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "chart.js": "^3.9.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^3.1.3",
+    "odbc": "^2.4.8",
+    "socket.io": "^4.7.5",
+    "ws": "^8.16.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
